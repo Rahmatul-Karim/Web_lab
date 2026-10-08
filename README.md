@@ -5,7 +5,7 @@ PlaySpace is a web-based platform that combines fun mini-games, interactive chal
 
 The main goal of this project is to provide users with an enjoyable and interactive experience while applying our knowledge of HTML, CSS, and JavaScript.
 
-##  Features
+ Features
 
 -  Interactive mini-games and challenges
 -  Knowledge-based quizzes
@@ -75,4 +75,4 @@ This project is developed collaboratively by a team of six members.
 - **Member F:** Trending Section, Responsive Design, Testing, Debugging, and Documentation
   📄
 
-                            **Play What's Interesting. Discover What's New. Test What You Know.**
+                            Play What's Interesting. Discover What's New. Test What You Know
