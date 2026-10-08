@@ -17,9 +17,9 @@ The main goal of this project is to provide users with an enjoyable and interact
 
 Technologies Used
 
-- HTML – Website structure
-- CSS– Styling, layout, and responsive design
-- JavaScript** – Game logic and interactive features
+- HTML       :Website structure
+- CSS        :Styling, layout, and responsive design
+- JavaScript :Game logic and interactive features
 
  Project Structure
 
