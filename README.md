@@ -5,7 +5,7 @@ PlaySpace is a web-based platform that combines fun mini-games, interactive chal
 
 The main goal of this project is to provide users with an enjoyable and interactive experience while applying our knowledge of HTML, CSS, and JavaScript.
 
- Features
+ ##Features
 
 -  Interactive mini-games and challenges
 -  Knowledge-based quizzes
@@ -15,7 +15,7 @@ The main goal of this project is to provide users with an enjoyable and interact
 -  Responsive and mobile-friendly design
 -  Attractive user interface and animations
 
-Technologies Used
+##Technologies Used
 
 - HTML – Website structure
 - CSS– Styling, layout, and responsive design
@@ -31,19 +31,7 @@ script.js
 images/
 README.md
 
-
-  How to Run
-
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open `index.html` in your web browser.
-4. Explore the games, quizzes, and other interactive features.
-
-No additional installation is required.
-
-
-
-  Project Objectives
+ ##Project Objectives
 
 - To develop an interactive web-based platform.
 - To combine entertainment and knowledge in one website.
@@ -51,7 +39,7 @@ No additional installation is required.
 - To practice HTML, CSS, and JavaScript.
 - To develop teamwork and practical web development skills.
 
- Future Improvements
+ ##Future Improvements
 
 - User accounts and personal profiles
 - Database integration
@@ -59,7 +47,7 @@ No additional installation is required.
 - Leaderboards and achievements
 - More games and interactive activities
 
- Project Scope
+ ##Project Scope
 
 The current project focuses on frontend development using HTML, CSS, and JavaScript. Advanced features such as user accounts and database integration may be considered in future versions.
 
