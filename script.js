@@ -1,6 +1,6 @@
 /* PlaySpace: games list, 3D-style icons, hero, launcher, game screen and Live API Integrations. */
 const GAMES = [
-  { id: "battle",  name: "Battle Quiz BD", cat: "App",  sub: "Live API Trivia", a: "#7c6cff", b: "#4b3fe0", l: ["#ffe8c2", "#e4dcff"], k: ["#3b3150", "#1e2542"] },
+  { id: "battle",  name: "Trivia Arena", cat: "App",  sub: "Live API Trivia", a: "#7c6cff", b: "#4b3fe0", l: ["#ffe8c2", "#e4dcff"], k: ["#3b3150", "#1e2542"] },
   { id: "guess",   name: "Guess the Flag", cat: "App",  sub: "REST Countries API", a: "#2f8bff", b: "#1259d6", l: ["#d8efff", "#eaf6ff"], k: ["#17344f", "#16253a"] },
   { id: "world",   name: "Explore World",  cat: "App",  sub: "REST Countries API", a: "#1fc7a5", b: "#0f8f7a", l: ["#d5f4ff", "#e3f8e6"], k: ["#123a44", "#173126"] },
   { id: "rooftop", name: "Rooftop Jump",   cat: "Game", sub: "Adventure",       a: "#ff7a9c", b: "#e0457a", l: ["#e8dfff", "#ffdfe9"], k: ["#33284f", "#4a2339"] },
@@ -30,6 +30,7 @@ const FALLBACK_COUNTRIES = [
 ];
 
 /* ---------- Icons: SVG Definitions ---------- */
+
 const stop = (o, c, a) => `<stop offset="${o}" stop-color="${c}"${a ? ` stop-opacity="${a}"` : ""}/>`;
 const DEFS = `
 <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">${stop(0, "#ffe9a3")}${stop(.5, "#e0a82e")}${stop(1, "#9a6410")}</linearGradient>
@@ -57,11 +58,11 @@ function bld(cx, y0, h, top, left, right, seed) {
 const SH = (rx) => `<ellipse cx="60" cy="109" rx="${rx}" ry="5" fill="#000" opacity=".4"/>`;
 const ICONS = {
   battle: `${SH(30)}
-    <path d="M60 10 101 25v33c0 26-17 43-41 53-24-10-41-27-41-53V25z" fill="url(#gGold)"/>
-    <path d="M60 19 93 31v27c0 21-13 35-33 44-20-9-33-23-33-44V31z" fill="url(#gGreen)"/>
-    <path d="M60 19 27 31v27c0 21 13 35 33 44z" fill="#fff" opacity=".13"/>
-    <circle cx="60" cy="58" r="18" fill="url(#gRed)"/>
-    <text x="60" y="67" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Arial,sans-serif">?</text>`,
+
+    <circle cx="60" cy="58" r="42" fill="url(#gOcean)"/>
+    <path d="M40 40h40v30H40z" fill="url(#gGold)" opacity=".9"/>
+    <path d="M45 32h30v8H45z" fill="url(#gGold)"/>
+    <text x="60" y="62" text-anchor="middle" font-size="32" font-weight="800" fill="#fff" font-family="Arial,sans-serif">?</text>`,
   guess: `${SH(32)}
     <rect x="29" y="14" width="6" height="94" rx="3" fill="url(#gMetal)"/><circle cx="32" cy="13" r="6" fill="url(#gGold)"/>
     <clipPath id="cWave"><path d="M35 24c16-10 28 10 46 0 10-5 18-2 24 0v38c-6-2-14-5-24 0-18 10-30-10-46 0z"/></clipPath>
