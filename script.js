@@ -29,6 +29,20 @@ const FALLBACK_COUNTRIES = [
   { name: { common: "Egypt" }, capital: ["Cairo"], region: "Africa", population: 104000000, flags: { png: "https://flagcdn.com/w320/eg.png" } }
 ];
 
+/* ---------- Fallback Trivia Questions (If OpenTrivia API is rate-limited or fails) ---------- */
+const FALLBACK_QUESTIONS = [
+  { question: "What is the capital city of Bangladesh?", correct_answer: "Dhaka", incorrect_answers: ["Chittagong", "Sylhet", "Rajshahi"], category: "Geography & Bangladesh" },
+  { question: "Which river is known as the longest river in Bangladesh?", correct_answer: "Surma", incorrect_answers: ["Padma", "Meghna", "Jamuna"], category: "Geography" },
+  { question: "What is the national animal of Bangladesh?", correct_answer: "Royal Bengal Tiger", incorrect_answers: ["Asian Elephant", "Leopard", "Spotted Deer"], category: "General Knowledge" },
+  { question: "In computing, what does 'HTTP' stand for?", correct_answer: "HyperText Transfer Protocol", incorrect_answers: ["High Transfer Text Protocol", "Hyper Transfer Tool Program", "Hyperlink Text Transmission Protocol"], category: "Technology" },
+  { question: "Which planet is known as the Red Planet?", correct_answer: "Mars", incorrect_answers: ["Venus", "Jupiter", "Saturn"], category: "Science" },
+  { question: "Who wrote the national anthem of Bangladesh, 'Amar Sonar Bangla'?", correct_answer: "Rabindranath Tagore", incorrect_answers: ["Kazi Nazrul Islam", "Jibanananda Das", "Michael Madhusudan Dutt"], category: "Literature & History" },
+  { question: "Which language is primarily used for structuring web pages?", correct_answer: "HTML", incorrect_answers: ["Python", "SQL", "C++"], category: "Web Development" },
+  { question: "What year did Bangladesh achieve independence?", correct_answer: "1971", incorrect_answers: ["1947", "1952", "1969"], category: "History" },
+  { question: "What is the largest ocean on Earth?", correct_answer: "Pacific Ocean", incorrect_answers: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"], category: "Geography" },
+  { question: "Which data structure operates on a First-In-First-Out (FIFO) basis?", correct_answer: "Queue", incorrect_answers: ["Stack", "Tree", "Graph"], category: "Computer Science" }
+];
+
 /* ---------- Icons: SVG Definitions ---------- */
 const stop = (o, c, a) => `<stop offset="${o}" stop-color="${c}"${a ? ` stop-opacity="${a}"` : ""}/>`;
 const DEFS = `
@@ -822,9 +836,16 @@ function battleGame(root) {
   let timer, nextTimeout;
 
   fetch("https://opentdb.com/api.php?amount=10&type=multiple")
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error("API error");
+      return res.json();
+    })
     .then(data => {
-      const qs = data.results;
+      if (!data.results || !data.results.length) throw new Error("No results");
+      return data.results;
+    })
+    .catch(() => FALLBACK_QUESTIONS)
+    .then(qs => {
       let i = 0, me = 100, foe = 100, left = 12, busy = false, cur;
 
       root.innerHTML = `
@@ -839,7 +860,7 @@ function battleGame(root) {
       const q$ = (s) => root.querySelector(s);
       const hp = () => {
         if (!q$("#meB")) return;
-        q$("#meB").style.width = me + "\%"; q$("#foeB").style.width = foe + "%";
+        q$("#meB").style.width = me + "%"; q$("#foeB").style.width = foe + "%";
         q$("#meT").textContent = me + " HP"; q$("#foeT").textContent = foe + " HP";
       };
 

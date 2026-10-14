@@ -51,9 +51,35 @@ README.md
 
 The current project focuses on frontend development using HTML, CSS, and JavaScript. Advanced features such as user accounts and database integration may be considered in future versions.
 
-Team Members
+## 🎮 Included Games & Apps
 
-This project is developed collaboratively by a team of six members.
+1. **Cha-er Dokan Chaos (3D Simulation)**:
+   - Full 3D roadside Bangladeshi tea stall simulation built with Three.js.
+   - Serve waiting customers tea, manage patience levels, avoid anger penalties, and earn Taka & tips within 60 seconds.
+2. **Robo Escape (3D Action & Puzzle)**:
+   - Procedural maze generation dungeon crawler with 3D lighting and fog.
+   - Evade patrolling red security drones, collect glowing energy cells, and escape through the green portal.
+3. **Rooftop Jump (2D Canvas Runner)**:
+   - Side-scrolling rooftop adventure with parallax multi-layer skyline and variable-height physics jumping.
+4. **Battle Quiz BD (Live API Trivia)**:
+   - Real-time trivia battle vs Rival Bot with dynamic health bars (HP), question timer, and automatic offline fallback questions.
+5. **Guess the Flag (Geo Trivia)**:
+   - Real-time flag identification quiz powered by REST Countries API with offline fallback data.
+6. **Explore World (Interactive Explorer)**:
+   - Browse world nations filtered by continents, view flags, capitals, and populations.
+
+## 🚀 How to Run Locally
+
+No build tools or servers required!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Rahmatul-Karim/Web_lab.git
+   ```
+2. Open `index.html` directly in any modern web browser (Chrome, Edge, Firefox, Safari).
+
+## 👥 Team Members
+
+This project is developed collaboratively by a team of six members:
 
 - **Member A:** Project Planning and Homepage/UI Design
 - **Member B:** HTML Structure and CSS Styling
@@ -61,6 +87,6 @@ This project is developed collaboratively by a team of six members.
 - **Member D:** Mini-Games and Interactive Challenges
 - **Member E:** Quiz, Knowledge/Facts Section, and Score Calculation
 - **Member F:** Trending Section, Responsive Design, Testing, Debugging, and Documentation
-  📄
 
-                            Play What's Interesting. Discover What's New. Test What You Know
+---
+*Play What's Interesting. Discover What's New. Test What You Know.*
